@@ -1,0 +1,41 @@
+<html>
+<head>
+  <link type="text/css" href="screen.css" rel="stylesheet" />
+</head>
+<body onload="load()">
+  <script type="text/javascript" src="Decoder.js"></script>
+  <script type="text/javascript" src="YUVCanvas.js"></script>
+  <script type="text/javascript" src="Player.js"></script>
+  
+  <script type="text/javascript" src="stream.js"></script>
+  
+  <script type="text/javascript" src="mp4.js"></script>
+  <script type="text/javascript" src="wsClient.js"></script>
+  <script type="text/javascript" src="environment.js"></script>
+  <script type="text/javascript" src="KeyEventHandler.js"></script>
+  <script type="text/javascript" src="InputEventHandler.js"></script>
+  <script type="text/javascript" src="KeyMapping.js"></script>
+  
+  <script type="text/javascript">
+    function load() {
+      //onGotIPAddress();
+      var nodes = document.querySelectorAll('div.broadway');
+      for (var i = 0; i < nodes.length; i++) {
+        var broadway = new Broadway(nodes[i]);
+        // broadway.play();
+        onGotIPAddress(broadway);
+      }
+    }
+  </script>
+  
+  <!-- <canvas id='canvas' width="640" height="100" style="background-color: #333333;"></canvas> -->
+  <!--
+  <br>
+  <br>
+  <a style="font-size: 24px; padding: 20px">Citrix Casting</a>
+  <br>
+  <a style="font-size: 14px; padding: 20px"></a><br><br>
+  -->
+  <div class="broadway" src="TwH264_0.h264" width="1888" height="1100" style="float: left; position: relative;" workers="false" render="true" webgl="auto"></div>
+</body>
+</html>
